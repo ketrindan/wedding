@@ -23,11 +23,13 @@ h3 {
 .hero {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   position: relative;
-  padding: 3rem 4rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
   overflow: hidden;
   min-height: 100vh;
 }
@@ -57,6 +59,8 @@ h3 {
   animation: heroAppear 2.5s ease-out forwards;
   width: 100%;
   z-index: 2;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 @keyframes heroAppear {
@@ -81,7 +85,7 @@ h3 {
   gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .hero-names {
@@ -95,14 +99,14 @@ h3 {
 }
 
 .scroll-hint {
-  position: absolute;
-  bottom: 1.2rem;
   font-size: 1.2rem;
   opacity: 0.7;
   animation: bounce 2s infinite;
   transition: opacity 0.3s ease;
   margin-top: auto;
   z-index: 2;
+  position: fixed;
+  bottom: 2rem;
 }
 
 .scroll-hint.hidden {
@@ -319,7 +323,7 @@ section h2 {
 /* Стиль красного карандаша - неровная, текстурированная линия */
 .wedding-day-heart svg.heart-border path {
   fill: none;
-  stroke: #952c20;
+  stroke: #d1220e;
   stroke-width: 5;
   filter: url(#pencil-texture);
   stroke-dasharray: 250;

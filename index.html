@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Приглашение на свадьбу</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <svg class="defs-filter">
+      <defs>
+        <filter id="pencil-texture">
+          <!-- Шум для текстуры карандаша -->
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.8"
+            numOctaves="3"
+            result="noise"
+          />
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="noise"
+            scale="1.5"
+            xChannelSelector="R"
+            yChannelSelector="G"
+          />
+          <!-- Неровность линии -->
+          <feMorphology operation="dilate" radius="0.5" />
+          <feGaussianBlur stdDeviation="0.3" />
+        </filter>
+      </defs>
+    </svg>
+    <header class="hero">
+      <div class="hero-content">
+        <p class="hero-date">08.08.2026</p>
+        <div class="hero-box">
+          <h1 class="hero-names">Константин</h1>
+          <h1 class="hero-names">и</h1>
+          <h1 class="hero-names">Екатерина</h1>
+        </div>
+        <p class="hero-subtitle">Приглашение на свадьбу</p>
+      </div>
+      <p class="scroll-hint">v</p>
+    </header>
+
+    <main>
+      <section class="invitation">
+        <h2>Дорогие родные и друзья!</h2>
+        <p>Приглашаем Вас разделить с нами этот особенный для нас день!</p>
+        <img src="./images/мы.jpg" alt="Мы" class="photo" />
+      </section>
+
+      <section class="map-section">
+        <h2>Место проведения</h2>
+        <p>Церемония регистрации состоится</p>
+        <p class="invite-date">8 августа 2026 в 14:00</p>
+        <p class="invite-where">в Якиманка Холл</p>
+        <p class="invite-address">По адресу: ул. Большая Якиманка, 15</p>
+        <div class="map-container">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A65c3f88a96bf256a6e446bec6c560db55cf87e5292df01ea3f692c5ecca7e21e&amp;source=constructor"
+            width="100%"
+            height="400"
+            frameborder="0"
+          ></iframe>
+        </div>
+
+        <a
+          href="https://yandex.ru/maps/213/moscow/house/Bolshaya_Yakimanka_ul_15/ymapsbm1%3A%2F%2Fgeo%3A55.740642%2C37.614064?text=Якиманка холл"
+          class="map-link"
+          target="_blank"
+        >
+          Открыть в Яндекс.Картах →
+        </a>
+      </section>
+      <section class="date-block">
+        <h3 class="date-text">Август 2026</h3>
+
+        <div class="calendar">
+          <div class="calendar-month">
+            <div class="calendar-days">
+              <div class="day-name">Пн</div>
+              <div class="day-name">Вт</div>
+              <div class="day-name">Ср</div>
+              <div class="day-name">Чт</div>
+              <div class="day-name">Пт</div>
+              <div class="day-name">Сб</div>
+              <div class="day-name">Вс</div>
+            </div>
+            <div class="calendar-days-content">
+              <!-- Пустые дни для начала месяца (Пн-Пт = 5 дней) -->
+              <div class="day-empty"></div>
+              <div class="day-empty"></div>
+              <div class="day-empty"></div>
+              <div class="day-empty"></div>
+              <div class="day-empty"></div>
+              <!-- 1 августа — суббота -->
+              <div class="day">1</div>
+              <!-- 2-7 августа -->
+              <div class="day">2</div>
+              <div class="day">3</div>
+              <div class="day">4</div>
+              <div class="day">5</div>
+              <div class="day">6</div>
+              <div class="day">7</div>
+              <!-- 8 августа — суббота (свадебный день с сердечком) -->
+              <div class="day wedding-day-heart">
+                <svg viewBox="0 0 100 100" class="heart-border">
+                  <path
+                    d="M50 85 C50 85 10 55 10 30 C10 15 20 10 30 10 C36 10 44 16 50 24 C56 16 64 10 70 10 C80 10 90 15 90 30 C90 55 50 85 50 85 Z"
+                  />
+                </svg>
+                <span>8</span>
+              </div>
+              <!-- 9-14 августа -->
+              <div class="day">9</div>
+              <div class="day">10</div>
+              <div class="day">11</div>
+              <div class="day">12</div>
+              <div class="day">13</div>
+              <div class="day">14</div>
+              <!-- 15-20 августа -->
+              <div class="day">15</div>
+              <div class="day">16</div>
+              <div class="day">17</div>
+              <div class="day">18</div>
+              <div class="day">19</div>
+              <div class="day">20</div>
+              <!-- 21-26 августа -->
+              <div class="day">21</div>
+              <div class="day">22</div>
+              <div class="day">23</div>
+              <div class="day">24</div>
+              <div class="day">25</div>
+              <div class="day">26</div>
+              <!-- 27-31 августа -->
+              <div class="day">27</div>
+              <div class="day">28</div>
+              <div class="day">29</div>
+              <div class="day">30</div>
+              <div class="day">31</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="schedule">
+        <h2>Программа дня</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-info">
+              <span class="event">
+                <span class="time">13:45</span>Сбор гостей</span
+              >
+            </div>
+            <div
+              class="timeline-circle"
+              style="
+                background-image: url(./images/meet.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+              "
+            ></div>
+          </div>
+          <div class="timeline-item">
+            <div
+              class="timeline-circle"
+              style="
+                background-image: url(./images/wed.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+              "
+            ></div>
+            <div class="timeline-info">
+              <span class="event"
+                ><span class="time">14:00</span>Церемония регистрации</span
+              >
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-info">
+              <span class="event"
+                ><span class="time">14:30</span>Прогулка-фотосессия</span
+              >
+            </div>
+            <div
+              class="timeline-circle"
+              style="
+                background-image: url(./images/walk.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+              "
+            ></div>
+          </div>
+          <div class="timeline-item">
+            <div
+              class="timeline-circle"
+              style="
+                background-image: url(./images/rest.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+              "
+            ></div>
+            <div class="timeline-info">
+              <span class="event"
+                ><span class="time">17:00</span>Встреча в ресторане</span
+              >
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-info">
+              <span class="event"
+                ><span class="time">17:30</span>Начало банкета</span
+              >
+            </div>
+            <div
+              class="timeline-circle"
+              style="
+                background-image: url(./images/meal.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+              "
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dresscode">
+        <h2>Дресс-код</h2>
+        <p>Нам будет приятно, если Вы оденетесь в светлых пастельных тонах</p>
+        <div class="color-palette">
+          <div class="color-circle" style="background: #f2e8de"></div>
+          <div class="color-circle" style="background: #c4bae0"></div>
+          <div class="color-circle" style="background: #c7e9d8"></div>
+          <div class="color-circle" style="background: #e2d1e7"></div>
+          <div class="color-circle" style="background: #b9cdf4"></div>
+        </div>
+      </section>
+
+      <section class="countdown">
+        <h2>До свадьбы осталось</h2>
+        <div class="timer" id="timer">
+          <div class="timer-block">
+            <span class="number" id="days">00</span>
+            <span class="label">дни</span>
+          </div>
+          <div class="timer-block">
+            <span class="number" id="hours">00</span>
+            <span class="label">часы</span>
+          </div>
+          <div class="timer-block">
+            <span class="number" id="minutes">00</span>
+            <span class="label">мин</span>
+          </div>
+          <div class="timer-block">
+            <span class="number" id="seconds">00</span>
+            <span class="label">сек</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Будем рады видеть Вас на нашем празднике!</p>
+      <h3 class="sign">Костя и Катя</h3>
+      <img src="./images/infinity.webp" alt="Вместе навсегда" class="inf" />
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

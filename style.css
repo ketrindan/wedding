@@ -21,14 +21,13 @@ h3 {
 
 /* Hero Section */
 .hero {
-  /* height: 100vh; */
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   position: relative;
   padding: 3rem 4rem;
-  box-sizing: border-box;
   overflow: hidden;
   min-height: 100vh;
 }
@@ -321,8 +320,7 @@ section h2 {
 .wedding-day-heart svg.heart-border path {
   fill: none;
   stroke: #952c20;
-  stroke-width: 3.5;
-  opacity: 0.9;
+  stroke-width: 5;
   filter: url(#pencil-texture);
   stroke-dasharray: 250;
   stroke-dashoffset: 250;

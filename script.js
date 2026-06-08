@@ -73,45 +73,58 @@ if (document.readyState === "loading") {
   initScrollHint();
 }
 
-// Анимация сердечка при доскролле до календаря
+// Анимация сердечка при доскролле
 function initCalendarAnimation() {
+  const calendarElement = document.querySelector(".calendar");
   const weddingDayElement = document.querySelector(".wedding-day-heart");
 
-  if (!weddingDayElement) return;
+  if (!calendarElement || !weddingDayElement) return;
 
   const svg = weddingDayElement.querySelector("svg.heart-border");
-
   if (!svg) return;
 
-  // Проверяем, есть ли у нас путь
   const path = svg.querySelector("path");
   if (!path) return;
 
-  // Создаем Observer для отслеживания видимости
-  const observer = new IntersectionObserver(
+  // Observer 1: Календарь ПОЯВИЛСЯ (90% видно)
+  const calendarObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Блок виден - добавляем класс для показа сердечка
-          svg.classList.add("visible");
-
-          // Прекращаем наблюдение после запуска
-          observer.unobserve(entry.target);
-
-          console.log("Сердечко появилось!");
+          svg.classList.remove("visible");
+          setTimeout(() => {
+            svg.classList.add("visible");
+          }, 50);
+          console.log("Календарь 90% видно! Сердечко рисуется!");
         }
       });
     },
     {
-      threshold: 0.5,
-      rootMargin: "0px 0px -50px 0px",
+      threshold: 0.9,
+      rootMargin: "0px 0px 0px 0px",
     },
   );
 
-  observer.observe(weddingDayElement);
+  // Observer 2: Цифра 8 УКРОЛСЬ (ушла за пределы)
+  const weddingDayObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          svg.classList.remove("visible");
+          console.log("Цифра 8 ушла! Сердечко исчезло!");
+        }
+      });
+    },
+    {
+      threshold: 0,
+      rootMargin: "0px 0px 0px 0px",
+    },
+  );
+
+  calendarObserver.observe(calendarElement);
+  weddingDayObserver.observe(weddingDayElement);
 }
 
-// Запускаем наблюдение после загрузки страницы
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initCalendarAnimation);
 } else {
